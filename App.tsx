@@ -22,7 +22,7 @@ const Page = () => {
 const Home = () => {
   const navigation = useNavigation()
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('page')}>
+    <TouchableOpacity onPress={() => navigation.navigate('Page')}>
       <Text>Click to go to Page</Text>
     </TouchableOpacity>
   )
@@ -30,7 +30,6 @@ const Home = () => {
 
 export default function App() {
   // Render app
-  console.log('nav')
   return (
     <NavigationContainer {...{ linking }}>
       <Stack.Navigator initialRouteName="Home">
