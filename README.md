@@ -1,7 +1,7 @@
 # reset-issue
 
 To start the project, run
-``expo start`
+```expo start```
 and then click on Run in web browser
 
 A page named "Home" will open in the browser.
