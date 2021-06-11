@@ -6,6 +6,7 @@ import { Text, TouchableOpacity } from 'react-native'
 const Stack = createStackNavigator()
 
 const linking = {
+  prefixes: [],
   config: {
     screens: {
       Home: '/home',
