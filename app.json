@@ -1,0 +1,12 @@
+{
+  "name": "reset-issue",
+  "displayName": "reset-issue",
+  "expo": {
+    "name": "reset-issue",
+    "slug": "reset-issue",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
