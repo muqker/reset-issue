@@ -1,19 +1,41 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import React from 'react'
+import { Text, TouchableOpacity } from 'react-native'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
+const Stack = createStackNavigator()
+
+const linking = {
+  config: {
+    screens: {
+      Home: '/home',
+      Page: '/page',
+    },
+  },
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Page = () => {
+  return <Text>Welcome to Page</Text>
+}
+
+const Home = () => {
+  const navigation = useNavigation()
+  return (
+    <TouchableOpacity onPress={() => navigation.navigate('page')}>
+      <Text>Click to go to Page</Text>
+    </TouchableOpacity>
+  )
+}
+
+export default function App() {
+  // Render app
+  console.log('nav')
+  return (
+    <NavigationContainer {...{ linking }}>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Page" component={Page} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
